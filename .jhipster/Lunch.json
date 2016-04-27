@@ -1,0 +1,32 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "person",
+      "otherEntityName": "person",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "lunch"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "lunchId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "start",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "end",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "changelogDate": "20160427162756",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl"
+}

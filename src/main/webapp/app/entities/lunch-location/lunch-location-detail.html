@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="luuncherApp.lunchLocation.detail.title">Lunch Location</span> {{vm.lunchLocation.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="luuncherApp.lunchLocation.lunchLocationId">Lunch Location Id</span></dt>
+        <dd>
+            <span>{{vm.lunchLocation.lunchLocationId}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="luuncherApp.lunchLocation.lunchLocationName">Lunch Location Name</span></dt>
+        <dd>
+            <span>{{vm.lunchLocation.lunchLocationName}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="luuncherApp.lunchLocation.streetAddress">Street Address</span></dt>
+        <dd>
+            <span>{{vm.lunchLocation.streetAddress}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="luuncherApp.lunchLocation.postalCode">Postal Code</span></dt>
+        <dd>
+            <span>{{vm.lunchLocation.postalCode}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="luuncherApp.lunchLocation.city">City</span></dt>
+        <dd>
+            <span>{{vm.lunchLocation.city}}</span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

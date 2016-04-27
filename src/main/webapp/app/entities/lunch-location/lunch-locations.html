@@ -1,0 +1,64 @@
+<div>
+    <h2 translate="luuncherApp.lunchLocation.home.title">Lunch Locations</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="lunch-location.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="luuncherApp.lunchLocation.home.createLabel">
+                        Create new Lunch Location
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="luuncherApp.lunchLocation.lunchLocationId">Lunch Location Id</span></th>
+                    <th><span translate="luuncherApp.lunchLocation.lunchLocationName">Lunch Location Name</span></th>
+                    <th><span translate="luuncherApp.lunchLocation.streetAddress">Street Address</span></th>
+                    <th><span translate="luuncherApp.lunchLocation.postalCode">Postal Code</span></th>
+                    <th><span translate="luuncherApp.lunchLocation.city">City</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="lunchLocation in vm.lunchLocations track by lunchLocation.id">
+                    <td><a ui-sref="lunch-location-detail({id:lunchLocation.id})">{{lunchLocation.id}}</a></td>
+                    <td>{{lunchLocation.lunchLocationId}}</td>
+                    <td>{{lunchLocation.lunchLocationName}}</td>
+                    <td>{{lunchLocation.streetAddress}}</td>
+                    <td>{{lunchLocation.postalCode}}</td>
+                    <td>{{lunchLocation.city}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="lunch-location-detail({id:lunchLocation.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="lunch-location.edit({id:lunchLocation.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="lunch-location.delete({id:lunchLocation.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

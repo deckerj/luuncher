@@ -1,0 +1,37 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "lunch",
+      "otherEntityName": "lunch",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "personId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "email",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160427162754",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl"
+}

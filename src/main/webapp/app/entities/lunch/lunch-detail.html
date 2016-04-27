@@ -1,0 +1,28 @@
+
+<div>
+    <h2><span translate="luuncherApp.lunch.detail.title">Lunch</span> {{vm.lunch.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="luuncherApp.lunch.lunchId">Lunch Id</span></dt>
+        <dd>
+            <span>{{vm.lunch.lunchId}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="luuncherApp.lunch.start">Start</span></dt>
+        <dd>
+            <span>{{vm.lunch.start | date:'mediumDate'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="luuncherApp.lunch.end">End</span></dt>
+        <dd>
+            <span>{{vm.lunch.end | date:'mediumDate'}}</span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

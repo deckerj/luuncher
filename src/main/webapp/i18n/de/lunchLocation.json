@@ -1,0 +1,26 @@
+{
+    "luuncherApp": {
+        "lunchLocation" : {
+            "home": {
+                "title": "Lunch Locations",
+                "createLabel": "Lunch Location erstellen",
+                "createOrEditLabel": "Lunch Location erstellen oder bearbeiten",
+                "search": "Suche nach Lunch Location"
+            },
+            "created": "Lunch Location erstellt mit ID {{ param }}",
+            "updated": "Lunch Location aktualisiert mit ID {{ param }}",
+            "deleted": "Lunch Location gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Lunch Location {{ id }} wirklich dauerhaft gejöscht werden?"
+            },
+            "detail": {
+                "title": "Lunch Location"
+            },
+            "lunchLocationId": "Lunch Location Id",
+            "lunchLocationName": "Lunch Location Name",
+            "streetAddress": "Street Address",
+            "postalCode": "Postal Code",
+            "city": "City"
+        }
+    }
+}

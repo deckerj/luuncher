@@ -1,0 +1,34 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "lunchLocationId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "lunchLocationName",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "streetAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "postalCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "city",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160427162755",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl"
+}

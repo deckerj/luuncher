@@ -1,0 +1,25 @@
+{
+    "luuncherApp": {
+        "lunch" : {
+            "home": {
+                "title": "Lunches",
+                "createLabel": "Create a new Lunch",
+                "createOrEditLabel": "Create or edit a Lunch",
+                "search": "Search for Lunch"
+            },
+            "created": "A new Lunch is created with identifier {{ param }}",
+            "updated": "A Lunch is updated with identifier {{ param }}",
+            "deleted": "A Lunch is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Lunch {{ id }}?"
+            },
+            "detail": {
+                "title": "Lunch"
+            },
+            "lunchId": "Lunch Id",
+            "start": "Start",
+            "end": "End",
+            "person": "Person"
+        }
+    }
+}

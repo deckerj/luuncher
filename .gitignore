@@ -3,6 +3,7 @@
 ######################
 /src/main/webapp/content/css/main.css
 /build/www/**
+application-dev.yml
 
 ######################
 # Node
