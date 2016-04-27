@@ -1,0 +1,12 @@
+version: '2'
+services:
+    luuncher-postgresql:
+        container_name: luuncher-postgresql
+        image: postgres:9.5.1
+        # volumes:
+        #     - ~/volumes/jhipster/luuncher/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=luuncher
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

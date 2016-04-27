@@ -1,0 +1,15 @@
+version: '2'
+services:
+    luuncher-app:
+        image: luuncher
+        external_links:
+            - luuncher-postgresql:postgresql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/luuncher
+        ports:
+            - 8080:8080
+    luuncher-postgresql:
+        extends:
+            file: postgresql.yml
+            service: luuncher-postgresql
