@@ -13,4 +13,6 @@
     <include file="classpath:config/liquibase/changelog/20160427203105_added_entity_constraints_LunchGroup.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160427203108_added_entity_constraints_LunchEvent.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20160428222256_added_relation_person_user.xml" relativeToChangelogFile="false"/>
+    
 </databaseChangeLog>

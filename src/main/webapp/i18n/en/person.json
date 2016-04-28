@@ -19,7 +19,8 @@
             "firstName": "First Name",
             "lastName": "Last Name",
             "email": "Email",
-            "lunchGroup": "Lunch Group"
+            "lunchGroup": "Lunch Group",
+            "user": "User"
         }
     }
 }

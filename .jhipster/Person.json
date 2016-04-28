@@ -1,33 +1,42 @@
 {
-  "relationships": [
-    {
-      "relationshipId": 1,
-      "relationshipName": "lunchGroup",
-      "otherEntityName": "lunchGroup",
-      "relationshipType": "many-to-many",
-      "ownerSide": false,
-      "otherEntityRelationshipName": "person"
-    }
-  ],
-  "fields": [
-    {
-      "fieldId": 1,
-      "fieldName": "firstName",
-      "fieldType": "String"
-    },
-    {
-      "fieldId": 2,
-      "fieldName": "lastName",
-      "fieldType": "String"
-    },
-    {
-      "fieldId": 3,
-      "fieldName": "email",
-      "fieldType": "String"
-    }
-  ],
-  "changelogDate": "20160427203106",
-  "dto": "mapstruct",
-  "pagination": "no",
-  "service": "serviceImpl"
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "lunchGroup",
+            "otherEntityName": "lunchGroup",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "person"
+        },
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "person"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "email",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160427203106",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "person",
+    "pagination": "no"
 }

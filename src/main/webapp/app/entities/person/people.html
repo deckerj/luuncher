@@ -22,6 +22,7 @@
                     <th><span translate="luuncherApp.person.firstName">First Name</span></th>
                     <th><span translate="luuncherApp.person.lastName">Last Name</span></th>
                     <th><span translate="luuncherApp.person.email">Email</span></th>
+                    <th><span translate="luuncherApp.person.user">User</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -31,6 +32,9 @@
                     <td>{{person.firstName}}</td>
                     <td>{{person.lastName}}</td>
                     <td>{{person.email}}</td>
+                    <td>
+                        {{person.userLogin}}
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

@@ -38,6 +38,10 @@ public class Person implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<LunchGroup> lunchGroups = new HashSet<>();
 
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User user;
+
     public Long getId() {
         return id;
     }
@@ -76,6 +80,14 @@ public class Person implements Serializable {
 
     public void setLunchGroups(Set<LunchGroup> lunchGroups) {
         this.lunchGroups = lunchGroups;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override
