@@ -1,8 +1,5 @@
 <div ng-cloak>
     <div class="row">
-        <div class="col-md-4">
-            <span class="hipster img-responsive img-rounded"></span>
-        </div>
         <div class="col-md-8">
             <h1 translate="home.title">Welcome to Luuncher!</h1>
             <p class="lead" translate="home.subtitle">Your hassle-free lunch organizer.</p>
@@ -10,6 +7,12 @@
             <div ng-switch="vm.isAuthenticated()">
                 <div class="alert alert-success" ng-switch-when="true" translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
                     You are logged in as user "{{vm.account.login}}".
+                </div>
+                <div ng-switch-when="true">
+                    <h2>Upcoming lunches</h2>
+                    <div ng-repeat="l in vm.lunches">
+                        {{l}}
+                    </div>
                 </div>
 
                 <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.authenticated" translate-compile>
@@ -20,8 +23,7 @@
                     You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
                 </div>
             </div>
-            <p>Upcoming lunches</p>
-            
+
         </div>
     </div>
 </div>

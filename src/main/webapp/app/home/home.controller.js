@@ -1,32 +1,43 @@
-(function() {
+(function () {
     'use strict';
 
     angular
         .module('luuncherApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state'];
+    HomeController.$inject = ['$scope', 'Principal', 'LoginService', '$state', 'LunchEvent'];
 
-    function HomeController ($scope, Principal, LoginService, $state) {
+    function HomeController($scope, Principal, LoginService, $state, LunchEvent) {
         var vm = this;
 
         vm.account = null;
         vm.isAuthenticated = null;
         vm.login = LoginService.open;
         vm.register = register;
-        $scope.$on('authenticationSuccess', function() {
+
+        $scope.$on('authenticationSuccess', function () {
             getAccount();
+            getLunchEvents();
         });
 
         getAccount();
+        getLunchEvents();
+
+        function getLunchEvents() {
+            vm.lunches = [];
+
+            LunchEvent.query(function (result) {
+                vm.lunches = result;
+            });
+        }
 
         function getAccount() {
-            Principal.identity().then(function(account) {
+            Principal.identity().then(function (account) {
                 vm.account = account;
                 vm.isAuthenticated = Principal.isAuthenticated;
             });
         }
-        function register () {
+        function register() {
             $state.go('register');
         }
     }
