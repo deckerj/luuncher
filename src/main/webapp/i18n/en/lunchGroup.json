@@ -1,0 +1,24 @@
+{
+    "luuncherApp": {
+        "lunchGroup" : {
+            "home": {
+                "title": "Lunch Groups",
+                "createLabel": "Create a new Lunch Group",
+                "createOrEditLabel": "Create or edit a Lunch Group",
+                "search": "Search for Lunch Group"
+            },
+            "created": "A new Lunch Group is created with identifier {{ param }}",
+            "updated": "A Lunch Group is updated with identifier {{ param }}",
+            "deleted": "A Lunch Group is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Lunch Group {{ id }}?"
+            },
+            "detail": {
+                "title": "Lunch Group"
+            },
+            "name": "Name",
+            "lunchEvent": "Lunch Event",
+            "person": "Person"
+        }
+    }
+}

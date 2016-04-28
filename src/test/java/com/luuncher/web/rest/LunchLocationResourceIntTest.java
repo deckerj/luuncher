@@ -44,9 +44,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @IntegrationTest
 public class LunchLocationResourceIntTest {
 
-
-    private static final Long DEFAULT_LUNCH_LOCATION_ID = 1L;
-    private static final Long UPDATED_LUNCH_LOCATION_ID = 2L;
     private static final String DEFAULT_LUNCH_LOCATION_NAME = "AAAAA";
     private static final String UPDATED_LUNCH_LOCATION_NAME = "BBBBB";
     private static final String DEFAULT_STREET_ADDRESS = "AAAAA";
@@ -55,6 +52,8 @@ public class LunchLocationResourceIntTest {
     private static final String UPDATED_POSTAL_CODE = "BBBBB";
     private static final String DEFAULT_CITY = "AAAAA";
     private static final String UPDATED_CITY = "BBBBB";
+    private static final String DEFAULT_WEBSITE = "AAAAA";
+    private static final String UPDATED_WEBSITE = "BBBBB";
 
     @Inject
     private LunchLocationRepository lunchLocationRepository;
@@ -89,11 +88,11 @@ public class LunchLocationResourceIntTest {
     @Before
     public void initTest() {
         lunchLocation = new LunchLocation();
-        lunchLocation.setLunchLocationId(DEFAULT_LUNCH_LOCATION_ID);
         lunchLocation.setLunchLocationName(DEFAULT_LUNCH_LOCATION_NAME);
         lunchLocation.setStreetAddress(DEFAULT_STREET_ADDRESS);
         lunchLocation.setPostalCode(DEFAULT_POSTAL_CODE);
         lunchLocation.setCity(DEFAULT_CITY);
+        lunchLocation.setWebsite(DEFAULT_WEBSITE);
     }
 
     @Test
@@ -113,11 +112,11 @@ public class LunchLocationResourceIntTest {
         List<LunchLocation> lunchLocations = lunchLocationRepository.findAll();
         assertThat(lunchLocations).hasSize(databaseSizeBeforeCreate + 1);
         LunchLocation testLunchLocation = lunchLocations.get(lunchLocations.size() - 1);
-        assertThat(testLunchLocation.getLunchLocationId()).isEqualTo(DEFAULT_LUNCH_LOCATION_ID);
         assertThat(testLunchLocation.getLunchLocationName()).isEqualTo(DEFAULT_LUNCH_LOCATION_NAME);
         assertThat(testLunchLocation.getStreetAddress()).isEqualTo(DEFAULT_STREET_ADDRESS);
         assertThat(testLunchLocation.getPostalCode()).isEqualTo(DEFAULT_POSTAL_CODE);
         assertThat(testLunchLocation.getCity()).isEqualTo(DEFAULT_CITY);
+        assertThat(testLunchLocation.getWebsite()).isEqualTo(DEFAULT_WEBSITE);
     }
 
     @Test
@@ -131,11 +130,11 @@ public class LunchLocationResourceIntTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.[*].id").value(hasItem(lunchLocation.getId().intValue())))
-                .andExpect(jsonPath("$.[*].lunchLocationId").value(hasItem(DEFAULT_LUNCH_LOCATION_ID.intValue())))
                 .andExpect(jsonPath("$.[*].lunchLocationName").value(hasItem(DEFAULT_LUNCH_LOCATION_NAME.toString())))
                 .andExpect(jsonPath("$.[*].streetAddress").value(hasItem(DEFAULT_STREET_ADDRESS.toString())))
                 .andExpect(jsonPath("$.[*].postalCode").value(hasItem(DEFAULT_POSTAL_CODE.toString())))
-                .andExpect(jsonPath("$.[*].city").value(hasItem(DEFAULT_CITY.toString())));
+                .andExpect(jsonPath("$.[*].city").value(hasItem(DEFAULT_CITY.toString())))
+                .andExpect(jsonPath("$.[*].website").value(hasItem(DEFAULT_WEBSITE.toString())));
     }
 
     @Test
@@ -149,11 +148,11 @@ public class LunchLocationResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.id").value(lunchLocation.getId().intValue()))
-            .andExpect(jsonPath("$.lunchLocationId").value(DEFAULT_LUNCH_LOCATION_ID.intValue()))
             .andExpect(jsonPath("$.lunchLocationName").value(DEFAULT_LUNCH_LOCATION_NAME.toString()))
             .andExpect(jsonPath("$.streetAddress").value(DEFAULT_STREET_ADDRESS.toString()))
             .andExpect(jsonPath("$.postalCode").value(DEFAULT_POSTAL_CODE.toString()))
-            .andExpect(jsonPath("$.city").value(DEFAULT_CITY.toString()));
+            .andExpect(jsonPath("$.city").value(DEFAULT_CITY.toString()))
+            .andExpect(jsonPath("$.website").value(DEFAULT_WEBSITE.toString()));
     }
 
     @Test
@@ -174,11 +173,11 @@ public class LunchLocationResourceIntTest {
         // Update the lunchLocation
         LunchLocation updatedLunchLocation = new LunchLocation();
         updatedLunchLocation.setId(lunchLocation.getId());
-        updatedLunchLocation.setLunchLocationId(UPDATED_LUNCH_LOCATION_ID);
         updatedLunchLocation.setLunchLocationName(UPDATED_LUNCH_LOCATION_NAME);
         updatedLunchLocation.setStreetAddress(UPDATED_STREET_ADDRESS);
         updatedLunchLocation.setPostalCode(UPDATED_POSTAL_CODE);
         updatedLunchLocation.setCity(UPDATED_CITY);
+        updatedLunchLocation.setWebsite(UPDATED_WEBSITE);
         LunchLocationDTO lunchLocationDTO = lunchLocationMapper.lunchLocationToLunchLocationDTO(updatedLunchLocation);
 
         restLunchLocationMockMvc.perform(put("/api/lunch-locations")
@@ -190,11 +189,11 @@ public class LunchLocationResourceIntTest {
         List<LunchLocation> lunchLocations = lunchLocationRepository.findAll();
         assertThat(lunchLocations).hasSize(databaseSizeBeforeUpdate);
         LunchLocation testLunchLocation = lunchLocations.get(lunchLocations.size() - 1);
-        assertThat(testLunchLocation.getLunchLocationId()).isEqualTo(UPDATED_LUNCH_LOCATION_ID);
         assertThat(testLunchLocation.getLunchLocationName()).isEqualTo(UPDATED_LUNCH_LOCATION_NAME);
         assertThat(testLunchLocation.getStreetAddress()).isEqualTo(UPDATED_STREET_ADDRESS);
         assertThat(testLunchLocation.getPostalCode()).isEqualTo(UPDATED_POSTAL_CODE);
         assertThat(testLunchLocation.getCity()).isEqualTo(UPDATED_CITY);
+        assertThat(testLunchLocation.getWebsite()).isEqualTo(UPDATED_WEBSITE);
     }
 
     @Test

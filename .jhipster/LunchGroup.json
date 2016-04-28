@@ -1,0 +1,30 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "lunchEvent",
+      "otherEntityName": "lunchEvent",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "lunchGroup"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "person",
+      "otherEntityName": "person",
+      "relationshipType": "many-to-many",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160427203105",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl"
+}

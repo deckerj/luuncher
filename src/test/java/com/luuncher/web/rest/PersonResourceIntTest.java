@@ -44,9 +44,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @IntegrationTest
 public class PersonResourceIntTest {
 
-
-    private static final Long DEFAULT_PERSON_ID = 1L;
-    private static final Long UPDATED_PERSON_ID = 2L;
     private static final String DEFAULT_FIRST_NAME = "AAAAA";
     private static final String UPDATED_FIRST_NAME = "BBBBB";
     private static final String DEFAULT_LAST_NAME = "AAAAA";
@@ -87,7 +84,6 @@ public class PersonResourceIntTest {
     @Before
     public void initTest() {
         person = new Person();
-        person.setPersonId(DEFAULT_PERSON_ID);
         person.setFirstName(DEFAULT_FIRST_NAME);
         person.setLastName(DEFAULT_LAST_NAME);
         person.setEmail(DEFAULT_EMAIL);
@@ -110,7 +106,6 @@ public class PersonResourceIntTest {
         List<Person> people = personRepository.findAll();
         assertThat(people).hasSize(databaseSizeBeforeCreate + 1);
         Person testPerson = people.get(people.size() - 1);
-        assertThat(testPerson.getPersonId()).isEqualTo(DEFAULT_PERSON_ID);
         assertThat(testPerson.getFirstName()).isEqualTo(DEFAULT_FIRST_NAME);
         assertThat(testPerson.getLastName()).isEqualTo(DEFAULT_LAST_NAME);
         assertThat(testPerson.getEmail()).isEqualTo(DEFAULT_EMAIL);
@@ -127,7 +122,6 @@ public class PersonResourceIntTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.[*].id").value(hasItem(person.getId().intValue())))
-                .andExpect(jsonPath("$.[*].personId").value(hasItem(DEFAULT_PERSON_ID.intValue())))
                 .andExpect(jsonPath("$.[*].firstName").value(hasItem(DEFAULT_FIRST_NAME.toString())))
                 .andExpect(jsonPath("$.[*].lastName").value(hasItem(DEFAULT_LAST_NAME.toString())))
                 .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())));
@@ -144,7 +138,6 @@ public class PersonResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.id").value(person.getId().intValue()))
-            .andExpect(jsonPath("$.personId").value(DEFAULT_PERSON_ID.intValue()))
             .andExpect(jsonPath("$.firstName").value(DEFAULT_FIRST_NAME.toString()))
             .andExpect(jsonPath("$.lastName").value(DEFAULT_LAST_NAME.toString()))
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()));
@@ -168,7 +161,6 @@ public class PersonResourceIntTest {
         // Update the person
         Person updatedPerson = new Person();
         updatedPerson.setId(person.getId());
-        updatedPerson.setPersonId(UPDATED_PERSON_ID);
         updatedPerson.setFirstName(UPDATED_FIRST_NAME);
         updatedPerson.setLastName(UPDATED_LAST_NAME);
         updatedPerson.setEmail(UPDATED_EMAIL);
@@ -183,7 +175,6 @@ public class PersonResourceIntTest {
         List<Person> people = personRepository.findAll();
         assertThat(people).hasSize(databaseSizeBeforeUpdate);
         Person testPerson = people.get(people.size() - 1);
-        assertThat(testPerson.getPersonId()).isEqualTo(UPDATED_PERSON_ID);
         assertThat(testPerson.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
         assertThat(testPerson.getLastName()).isEqualTo(UPDATED_LAST_NAME);
         assertThat(testPerson.getEmail()).isEqualTo(UPDATED_EMAIL);

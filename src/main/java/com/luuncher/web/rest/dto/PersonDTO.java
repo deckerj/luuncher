@@ -13,9 +13,6 @@ public class PersonDTO implements Serializable {
 
     private Long id;
 
-    private Long personId;
-
-
     private String firstName;
 
 
@@ -25,20 +22,12 @@ public class PersonDTO implements Serializable {
     private String email;
 
 
-    private Long lunchId;
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-    public Long getPersonId() {
-        return personId;
-    }
-
-    public void setPersonId(Long personId) {
-        this.personId = personId;
     }
     public String getFirstName() {
         return firstName;
@@ -62,13 +51,6 @@ public class PersonDTO implements Serializable {
         this.email = email;
     }
 
-    public Long getLunchId() {
-        return lunchId;
-    }
-
-    public void setLunchId(Long lunchId) {
-        this.lunchId = lunchId;
-    }
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -94,7 +76,6 @@ public class PersonDTO implements Serializable {
     public String toString() {
         return "PersonDTO{" +
             "id=" + id +
-            ", personId='" + personId + "'" +
             ", firstName='" + firstName + "'" +
             ", lastName='" + lastName + "'" +
             ", email='" + email + "'" +

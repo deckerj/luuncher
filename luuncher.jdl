@@ -1,0 +1,37 @@
+entity LunchGroup {
+   name String
+}
+
+entity Person {
+   firstName String,
+   lastName String,
+   email String
+}
+
+entity LunchLocation {
+  lunchLocationName String,
+  streetAddress String,
+  postalCode String,
+  city String,
+  website String
+}
+
+entity LunchEvent {
+   startDate LocalDate
+}
+
+relationship OneToOne {
+  LunchEvent{lunchLocation} to LunchLocation
+}
+
+relationship OneToMany {
+   LunchGroup{lunchEvent} to LunchEvent{lunchGroup(name)}
+}
+
+relationship ManyToMany {
+   LunchGroup{person} to Person{lunchGroup(name)}
+}
+
+dto * with mapstruct
+service all with serviceImpl
+

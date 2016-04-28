@@ -11,9 +11,6 @@ public class LunchLocationDTO implements Serializable {
 
     private Long id;
 
-    private Long lunchLocationId;
-
-
     private String lunchLocationName;
 
 
@@ -26,19 +23,15 @@ public class LunchLocationDTO implements Serializable {
     private String city;
 
 
+    private String website;
+
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-    public Long getLunchLocationId() {
-        return lunchLocationId;
-    }
-
-    public void setLunchLocationId(Long lunchLocationId) {
-        this.lunchLocationId = lunchLocationId;
     }
     public String getLunchLocationName() {
         return lunchLocationName;
@@ -68,6 +61,13 @@ public class LunchLocationDTO implements Serializable {
     public void setCity(String city) {
         this.city = city;
     }
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -94,11 +94,11 @@ public class LunchLocationDTO implements Serializable {
     public String toString() {
         return "LunchLocationDTO{" +
             "id=" + id +
-            ", lunchLocationId='" + lunchLocationId + "'" +
             ", lunchLocationName='" + lunchLocationName + "'" +
             ", streetAddress='" + streetAddress + "'" +
             ", postalCode='" + postalCode + "'" +
             ", city='" + city + "'" +
+            ", website='" + website + "'" +
             '}';
     }
 }

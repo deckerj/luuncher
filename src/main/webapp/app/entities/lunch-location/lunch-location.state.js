@@ -71,11 +71,11 @@
                     resolve: {
                         entity: function () {
                             return {
-                                lunchLocationId: null,
                                 lunchLocationName: null,
                                 streetAddress: null,
                                 postalCode: null,
                                 city: null,
+                                website: null,
                                 id: null
                             };
                         }

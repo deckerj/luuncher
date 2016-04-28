@@ -1,10 +1,13 @@
 package com.luuncher.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -21,9 +24,6 @@ public class Person implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "person_id")
-    private Long personId;
-
     @Column(name = "first_name")
     private String firstName;
 
@@ -33,8 +33,10 @@ public class Person implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @ManyToOne
-    private Lunch lunch;
+    @ManyToMany(mappedBy = "people")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<LunchGroup> lunchGroups = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -42,14 +44,6 @@ public class Person implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getPersonId() {
-        return personId;
-    }
-
-    public void setPersonId(Long personId) {
-        this.personId = personId;
     }
 
     public String getFirstName() {
@@ -76,12 +70,12 @@ public class Person implements Serializable {
         this.email = email;
     }
 
-    public Lunch getLunch() {
-        return lunch;
+    public Set<LunchGroup> getLunchGroups() {
+        return lunchGroups;
     }
 
-    public void setLunch(Lunch lunch) {
-        this.lunch = lunch;
+    public void setLunchGroups(Set<LunchGroup> lunchGroups) {
+        this.lunchGroups = lunchGroups;
     }
 
     @Override
@@ -108,7 +102,6 @@ public class Person implements Serializable {
     public String toString() {
         return "Person{" +
             "id=" + id +
-            ", personId='" + personId + "'" +
             ", firstName='" + firstName + "'" +
             ", lastName='" + lastName + "'" +
             ", email='" + email + "'" +

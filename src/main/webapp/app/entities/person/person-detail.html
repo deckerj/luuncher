@@ -3,11 +3,6 @@
     <h2><span translate="luuncherApp.person.detail.title">Person</span> {{vm.person.id}}</h2>
     <hr>
     <dl class="dl-horizontal">
-        <dt><span translate="luuncherApp.person.personId">Person Id</span></dt>
-        <dd>
-            <span>{{vm.person.personId}}</span>
-        </dd>
-        <hr>
         <dt><span translate="luuncherApp.person.firstName">First Name</span></dt>
         <dd>
             <span>{{vm.person.firstName}}</span>
@@ -21,11 +16,6 @@
         <dt><span translate="luuncherApp.person.email">Email</span></dt>
         <dd>
             <span>{{vm.person.email}}</span>
-        </dd>
-        <hr>
-        <dt><span translate="luuncherApp.person.lunch">Lunch</span></dt>
-        <dd>
-            <a ui-sref="lunch-detail({id:vm.person.lunchId})">{{vm.person.lunchId}}</a>
         </dd>
         <hr>
     </dl>

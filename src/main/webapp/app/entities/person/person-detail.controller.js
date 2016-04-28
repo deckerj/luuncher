@@ -5,9 +5,9 @@
         .module('luuncherApp')
         .controller('PersonDetailController', PersonDetailController);
 
-    PersonDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'entity', 'Person', 'Lunch'];
+    PersonDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'entity', 'Person', 'LunchGroup'];
 
-    function PersonDetailController($scope, $rootScope, $stateParams, entity, Person, Lunch) {
+    function PersonDetailController($scope, $rootScope, $stateParams, entity, Person, LunchGroup) {
         var vm = this;
         vm.person = entity;
         

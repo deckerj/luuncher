@@ -1,0 +1,24 @@
+{
+    "luuncherApp": {
+        "lunchEvent" : {
+            "home": {
+                "title": "Lunch Events",
+                "createLabel": "Lunch Event erstellen",
+                "createOrEditLabel": "Lunch Event erstellen oder bearbeiten",
+                "search": "Suche nach Lunch Event"
+            },
+            "created": "Lunch Event erstellt mit ID {{ param }}",
+            "updated": "Lunch Event aktualisiert mit ID {{ param }}",
+            "deleted": "Lunch Event gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Lunch Event {{ id }} wirklich dauerhaft gejöscht werden?"
+            },
+            "detail": {
+                "title": "Lunch Event"
+            },
+            "startDate": "Start Date",
+            "lunchLocation": "Lunch Location",
+            "lunchGroup": "Lunch Group"
+        }
+    }
+}

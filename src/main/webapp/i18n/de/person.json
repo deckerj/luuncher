@@ -16,11 +16,10 @@
             "detail": {
                 "title": "Person"
             },
-            "personId": "Person Id",
             "firstName": "First Name",
             "lastName": "Last Name",
             "email": "Email",
-            "lunch": "Lunch"
+            "lunchGroup": "Lunch Group"
         }
     }
 }

@@ -5,12 +5,12 @@
         .module('luuncherApp')
         .controller('PersonDialogController', PersonDialogController);
 
-    PersonDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Person', 'Lunch'];
+    PersonDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Person', 'LunchGroup'];
 
-    function PersonDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Person, Lunch) {
+    function PersonDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Person, LunchGroup) {
         var vm = this;
         vm.person = entity;
-        vm.lunches = Lunch.query();
+        vm.lunchgroups = LunchGroup.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

@@ -3,31 +3,31 @@
   "fields": [
     {
       "fieldId": 1,
-      "fieldName": "lunchLocationId",
-      "fieldType": "Long"
-    },
-    {
-      "fieldId": 2,
       "fieldName": "lunchLocationName",
       "fieldType": "String"
     },
     {
-      "fieldId": 3,
+      "fieldId": 2,
       "fieldName": "streetAddress",
       "fieldType": "String"
     },
     {
-      "fieldId": 4,
+      "fieldId": 3,
       "fieldName": "postalCode",
       "fieldType": "String"
     },
     {
-      "fieldId": 5,
+      "fieldId": 4,
       "fieldName": "city",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "website",
       "fieldType": "String"
     }
   ],
-  "changelogDate": "20160427162755",
+  "changelogDate": "20160427203107",
   "dto": "mapstruct",
   "pagination": "no",
   "service": "serviceImpl"

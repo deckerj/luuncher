@@ -16,11 +16,11 @@
             "detail": {
                 "title": "Lunch Location"
             },
-            "lunchLocationId": "Lunch Location Id",
             "lunchLocationName": "Lunch Location Name",
             "streetAddress": "Street Address",
             "postalCode": "Postal Code",
-            "city": "City"
+            "city": "City",
+            "website": "Website"
         }
     }
 }

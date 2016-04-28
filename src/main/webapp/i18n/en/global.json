@@ -10,6 +10,8 @@
                 "person": "Person",
                 "lunchLocation": "Lunch Location",
                 "lunch": "Lunch",
+                "lunchGroup": "Lunch Group",
+                "lunchEvent": "Lunch Event",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -48,7 +50,7 @@
         },
         "messages": {
             "info": {
-                "authenticated": "If you want to <a class=\"alert-link\" href=\"\" ng-click=\"vm.login()\">sign in</a>, you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\").",
+                "authenticated": "<a class=\"alert-link\" href=\"\" ng-click=\"vm.login()\">Sign in</a> with your existing account.",
                 "register": "You don't have an account yet? <a class=\"alert-link\" href=\"\" ng-click=\"vm.register()\">Register a new account</a>"
             },
             "error": {
@@ -117,5 +119,5 @@
         "emailexists": "E-mail is already in use!",
         "idexists": "A new {{ entityName }} cannot already have an ID"
     },
-    "footer": "This is your footer"
+    "footer": "--- Luncher - your hassle-free lunch organizer"
 }

@@ -1,0 +1,31 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "lunchLocation",
+      "otherEntityName": "lunchLocation",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "lunchEvent"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "lunchGroup",
+      "otherEntityName": "lunchGroup",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "name"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "changelogDate": "20160427203108",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl"
+}
