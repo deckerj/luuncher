@@ -3,7 +3,7 @@
         "title": "Welcome to Luuncher!",
         "subtitle": "Your hassle-free lunch organizer.",
         "logged": {
-            "message": "You are logged in as user \"{{username}}\"."
+            "message": "Logged in: {{username}}"
         }
     }
 }

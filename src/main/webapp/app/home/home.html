@@ -5,9 +5,6 @@
             <p class="lead" translate="home.subtitle">Your hassle-free lunch organizer.</p>
 
             <div ng-switch="vm.isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true" translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
-                    You are logged in as user "{{vm.account.login}}".
-                </div>
                 <div ng-switch-when="true">
                     <h2>Upcoming lunches</h2>
 					<div class="table-responsive">

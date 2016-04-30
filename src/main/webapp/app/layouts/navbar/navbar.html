@@ -7,10 +7,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/" ng-click="vm.collapseNavbar()"><span translate="global.title">Luuncher</span> <span class="navbar-version">v{{VERSION}}</span></a>
+            <a class="navbar-brand" href="#/" ng-click="vm.collapseNavbar()">
+				<span translate="global.title">Luuncher</span> <span class="navbar-version">v{{VERSION}}</span>
+            </a>
         </div>
         <div class="navbar-collapse" uib-collapse="vm.isNavbarCollapsed" ng-switch="vm.isAuthenticated()">
             <ul class="nav navbar-nav navbar-right">
+                <li ui-sref-active="active" ng-switch-when="true">
+                    <a>
+                        <span translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">Logged in: {{vm.account.login}}</span>
+                    </a>
+                </li>
                 <li ui-sref-active="active">
                     <a ui-sref="home" ng-click="vm.collapseNavbar()">
                         <span class="glyphicon glyphicon-home"></span>

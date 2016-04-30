@@ -1,14 +1,18 @@
 package com.luuncher.service;
 
 import com.luuncher.domain.Authority;
+import com.luuncher.domain.Person;
 import com.luuncher.domain.User;
 import com.luuncher.repository.AuthorityRepository;
+import com.luuncher.repository.PersonRepository;
 import com.luuncher.repository.UserRepository;
 import com.luuncher.security.SecurityUtils;
 import com.luuncher.service.util.RandomUtil;
 import com.luuncher.web.rest.dto.ManagedUserDTO;
+
 import java.time.ZonedDateTime;
 import java.time.LocalDate;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -17,7 +21,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.ZonedDateTime;
+
 import javax.inject.Inject;
+
 import java.util.*;
 
 /**
@@ -29,12 +35,14 @@ public class UserService {
 
     private final Logger log = LoggerFactory.getLogger(UserService.class);
 
-
     @Inject
     private PasswordEncoder passwordEncoder;
 
     @Inject
     private UserRepository userRepository;
+
+    @Inject
+    private PersonRepository personRepository;
 
     @Inject
     private AuthorityRepository authorityRepository;
@@ -101,6 +109,11 @@ public class UserService {
         authorities.add(authority);
         newUser.setAuthorities(authorities);
         userRepository.save(newUser);
+        
+        Person person = new Person();
+        person.setUser(newUser);
+        personRepository.save(person);
+
         log.debug("Created Information for User: {}", newUser);
         return newUser;
     }
@@ -129,6 +142,7 @@ public class UserService {
         user.setResetDate(ZonedDateTime.now());
         user.setActivated(true);
         userRepository.save(user);
+        
         log.debug("Created Information for User: {}", user);
         return user;
     }

@@ -2,7 +2,7 @@
 
 Luuncher takes away your daily pain from organizing lunch time.
 
-Luuncher suggests your team the lunch location and notifies your mates.
+Luuncher suggests your team the lunch location and notifies all registered team members.
 
 
 ## Development
