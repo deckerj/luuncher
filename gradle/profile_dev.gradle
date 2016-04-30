@@ -21,6 +21,7 @@ if (project.hasProperty('no-cache')) {
 }
 
 bootRun {
+	jvmArgs = ["-Xdebug", "-Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n"]
     args = ["--spring.profiles.active=" + profiles]
 }
 
