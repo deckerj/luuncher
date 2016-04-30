@@ -1,9 +1,20 @@
 {
     "home": {
-        "title": "Welcome to Luucher!",
+        "title": "Welcome to Luuncher!",
         "subtitle": "Your hassle-free lunch organizer.",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         }
-    }
+    },
+    "comment" : "TODO deckerj - remove this copied stuff from lunchEvent.json",
+    "luuncherApp": {
+		"lunchEvent" : {
+			"detail": {
+				"title": "Lunch Event"
+			},
+			"startDate": "Start Date",
+			"lunchLocation": "Lunch Location",
+			"lunchGroup": "Lunch Group"
+		}
+	}
 }

@@ -1,5 +1,7 @@
 package com.luuncher.service.impl;
 
+import com.luuncher.security.AuthoritiesConstants;
+import com.luuncher.security.SecurityUtils;
 import com.luuncher.service.LunchEventService;
 import com.luuncher.domain.LunchEvent;
 import com.luuncher.repository.LunchEventRepository;
@@ -52,10 +54,18 @@ public class LunchEventServiceImpl implements LunchEventService{
     @Transactional(readOnly = true) 
     public List<LunchEventDTO> findAll() {
         log.debug("Request to get all LunchEvents");
-        List<LunchEventDTO> result = lunchEventRepository.findAll().stream()
-            .map(lunchEventMapper::lunchEventToLunchEventDTO)
-            .collect(Collectors.toCollection(LinkedList::new));
-        return result;
+        
+        if (SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.ADMIN)) {
+			List<LunchEventDTO> result = lunchEventRepository.findAll().stream()
+				.map(lunchEventMapper::lunchEventToLunchEventDTO)
+				.collect(Collectors.toCollection(LinkedList::new));
+			return result;
+        } else {
+			List<LunchEventDTO> result = lunchEventRepository.findByUserIsCurrentUser().stream()
+				.map(lunchEventMapper::lunchEventToLunchEventDTO)
+				.collect(Collectors.toCollection(LinkedList::new));
+			return result;
+        }
     }
 
     /**

@@ -24,10 +24,10 @@
         getLunchEvents();
 
         function getLunchEvents() {
-            vm.lunches = [];
+            vm.lunchEvents = [];
 
             LunchEvent.query(function (result) {
-                vm.lunches = result;
+                vm.lunchEvents = result;
             });
         }
 
