@@ -1,8 +1,13 @@
 # luuncher
 
-This application was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
+Luuncher takes away your daily pain from organizing lunch time.
+
+Luuncher suggests your team the lunch location and notifies your mates.
+
 
 ## Development
+
+This application was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
 
