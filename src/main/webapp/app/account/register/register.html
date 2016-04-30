@@ -50,6 +50,52 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="control-label" for="firstName" translate="userManagement.firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="{{'userManagement.firstName' | translate}}"
+                           ng-model="vm.registerAccount.firstName" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[A-Za-z\u00E0-\u00FC-]*$/" required>
+                    <div ng-show="form.firstName.$dirty && form.firstName.$invalid">
+                        <p class="help-block"
+                               ng-show="form.firstName.$error.required" translate="entity.validation.required">
+                            Your first name is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.firstName.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                            Your first is required to be at least 1 character.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.firstName.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="50">
+                            Your first name cannot be longer than 50 characters.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.firstName.$error.pattern" translate="entity.validation.pattern" translate-value-pattern="A-Z, a-z, letters, -">
+                            Your first name can only contain letters and dashes.
+						</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="lastName" translate="userManagement.lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="{{'userManagement.lastName' | translate}}"
+                           ng-model="vm.registerAccount.lastName" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[A-Za-z\u00E0-\u00FC-]*$/" required>
+                    <div ng-show="form.lastName.$dirty && form.lastName.$invalid">
+                        <p class="help-block"
+                               ng-show="form.lastName.$error.required" translate="entity.validation.required">
+                            Your last name is required.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.lastName.$error.minlength" translate="entity.validation.minlength" translate-value-min="1">
+                            Your last is required to be at least 1 character.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.lastName.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="50">
+                            Your last name cannot be longer than 50 characters.
+                        </p>
+                        <p class="help-block"
+                               ng-show="form.lastName.$error.pattern" translate="entity.validation.pattern" translate-value-pattern="A-Z, a-z, letters, -">
+                            Your last name can only contain letters and dashes.
+						</p>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="control-label" for="email" translate="global.form.email">E-mail</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="{{'global.form.email.placeholder' | translate}}"
                            ng-model="vm.registerAccount.email" ng-minlength=5 ng-maxlength=100 required>
