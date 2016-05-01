@@ -16,9 +16,6 @@
             "detail": {
                 "title": "Person"
             },
-            "firstName": "First Name",
-            "lastName": "Last Name",
-            "email": "Email",
             "lunchGroup": "Lunch Group",
             "user": "User"
         }

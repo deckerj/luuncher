@@ -17,23 +17,7 @@
             "otherEntityRelationshipName": "person"
         }
     ],
-    "fields": [
-        {
-            "fieldId": 1,
-            "fieldName": "firstName",
-            "fieldType": "String"
-        },
-        {
-            "fieldId": 2,
-            "fieldName": "lastName",
-            "fieldType": "String"
-        },
-        {
-            "fieldId": 3,
-            "fieldName": "email",
-            "fieldType": "String"
-        }
-    ],
+    "fields": [],
     "changelogDate": "20160427203106",
     "dto": "mapstruct",
     "service": "serviceImpl",

@@ -71,9 +71,6 @@
                     resolve: {
                         entity: function () {
                             return {
-                                firstName: null,
-                                lastName: null,
-                                email: null,
                                 id: null
                             };
                         }

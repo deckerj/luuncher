@@ -44,12 +44,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @IntegrationTest
 public class PersonResourceIntTest {
 
-    private static final String DEFAULT_FIRST_NAME = "AAAAA";
-    private static final String UPDATED_FIRST_NAME = "BBBBB";
-    private static final String DEFAULT_LAST_NAME = "AAAAA";
-    private static final String UPDATED_LAST_NAME = "BBBBB";
-    private static final String DEFAULT_EMAIL = "AAAAA";
-    private static final String UPDATED_EMAIL = "BBBBB";
 
     @Inject
     private PersonRepository personRepository;
@@ -84,9 +78,6 @@ public class PersonResourceIntTest {
     @Before
     public void initTest() {
         person = new Person();
-        person.setFirstName(DEFAULT_FIRST_NAME);
-        person.setLastName(DEFAULT_LAST_NAME);
-        person.setEmail(DEFAULT_EMAIL);
     }
 
     @Test
@@ -106,9 +97,6 @@ public class PersonResourceIntTest {
         List<Person> people = personRepository.findAll();
         assertThat(people).hasSize(databaseSizeBeforeCreate + 1);
         Person testPerson = people.get(people.size() - 1);
-        assertThat(testPerson.getFirstName()).isEqualTo(DEFAULT_FIRST_NAME);
-        assertThat(testPerson.getLastName()).isEqualTo(DEFAULT_LAST_NAME);
-        assertThat(testPerson.getEmail()).isEqualTo(DEFAULT_EMAIL);
     }
 
     @Test
@@ -121,10 +109,7 @@ public class PersonResourceIntTest {
         restPersonMockMvc.perform(get("/api/people?sort=id,desc"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.[*].id").value(hasItem(person.getId().intValue())))
-                .andExpect(jsonPath("$.[*].firstName").value(hasItem(DEFAULT_FIRST_NAME.toString())))
-                .andExpect(jsonPath("$.[*].lastName").value(hasItem(DEFAULT_LAST_NAME.toString())))
-                .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())));
+                .andExpect(jsonPath("$.[*].id").value(hasItem(person.getId().intValue())));
     }
 
     @Test
@@ -137,10 +122,7 @@ public class PersonResourceIntTest {
         restPersonMockMvc.perform(get("/api/people/{id}", person.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-            .andExpect(jsonPath("$.id").value(person.getId().intValue()))
-            .andExpect(jsonPath("$.firstName").value(DEFAULT_FIRST_NAME.toString()))
-            .andExpect(jsonPath("$.lastName").value(DEFAULT_LAST_NAME.toString()))
-            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()));
+            .andExpect(jsonPath("$.id").value(person.getId().intValue()));
     }
 
     @Test
@@ -161,9 +143,6 @@ public class PersonResourceIntTest {
         // Update the person
         Person updatedPerson = new Person();
         updatedPerson.setId(person.getId());
-        updatedPerson.setFirstName(UPDATED_FIRST_NAME);
-        updatedPerson.setLastName(UPDATED_LAST_NAME);
-        updatedPerson.setEmail(UPDATED_EMAIL);
         PersonDTO personDTO = personMapper.personToPersonDTO(updatedPerson);
 
         restPersonMockMvc.perform(put("/api/people")
@@ -175,9 +154,6 @@ public class PersonResourceIntTest {
         List<Person> people = personRepository.findAll();
         assertThat(people).hasSize(databaseSizeBeforeUpdate);
         Person testPerson = people.get(people.size() - 1);
-        assertThat(testPerson.getFirstName()).isEqualTo(UPDATED_FIRST_NAME);
-        assertThat(testPerson.getLastName()).isEqualTo(UPDATED_LAST_NAME);
-        assertThat(testPerson.getEmail()).isEqualTo(UPDATED_EMAIL);
     }
 
     @Test
