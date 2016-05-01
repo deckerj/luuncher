@@ -16,7 +16,7 @@
             "detail": {
                 "title": "Lunch Location"
             },
-            "lunchLocationName": "Lunch Location Name",
+            "name": "Name",
             "streetAddress": "Street Address",
             "postalCode": "Postal Code",
             "city": "City",

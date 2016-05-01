@@ -1,7 +1,8 @@
 {
     "home": {
         "title": "Willkommen bei Luuncher!",
-        "subtitle": "Der einfache Lunch-Organizer",
+        "subtitle": "Deinem einfachen Lunch-Organizer.",
+        "upcomingLunches": "Deine nächsten Lunches",
         "logged": {
             "message": "Angemeldet: {{username}}"
         }

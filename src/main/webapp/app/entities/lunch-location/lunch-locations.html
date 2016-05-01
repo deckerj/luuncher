@@ -19,7 +19,7 @@
             <thead>
                 <tr>
                     <th><span translate="global.field.id">ID</span></th>
-                    <th><span translate="luuncherApp.lunchLocation.lunchLocationName">Lunch Location Name</span></th>
+                    <th><span translate="luuncherApp.lunchLocation.name">Name</span></th>
                     <th><span translate="luuncherApp.lunchLocation.streetAddress">Street Address</span></th>
                     <th><span translate="luuncherApp.lunchLocation.postalCode">Postal Code</span></th>
                     <th><span translate="luuncherApp.lunchLocation.city">City</span></th>
@@ -30,7 +30,7 @@
             <tbody>
                 <tr ng-repeat="lunchLocation in vm.lunchLocations track by lunchLocation.id">
                     <td><a ui-sref="lunch-location-detail({id:lunchLocation.id})">{{lunchLocation.id}}</a></td>
-                    <td>{{lunchLocation.lunchLocationName}}</td>
+                    <td>{{lunchLocation.name}}</td>
                     <td>{{lunchLocation.streetAddress}}</td>
                     <td>{{lunchLocation.postalCode}}</td>
                     <td>{{lunchLocation.city}}</td>

@@ -5,7 +5,7 @@
       "relationshipName": "lunchLocation",
       "otherEntityName": "lunchLocation",
       "relationshipType": "one-to-one",
-      "otherEntityField": "id",
+      "otherEntityField": "name",
       "ownerSide": true,
       "otherEntityRelationshipName": "lunchEvent"
     },

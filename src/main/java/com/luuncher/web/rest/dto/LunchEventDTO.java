@@ -18,6 +18,9 @@ public class LunchEventDTO implements Serializable {
 
 
     private Long lunchLocationId;
+
+    private String lunchLocationName;
+
     private Long lunchGroupId;
 
     private String lunchGroupName;
@@ -44,6 +47,15 @@ public class LunchEventDTO implements Serializable {
     public void setLunchLocationId(Long lunchLocationId) {
         this.lunchLocationId = lunchLocationId;
     }
+
+    public String getLunchLocationName() {
+        return lunchLocationName;
+    }
+
+    public void setLunchLocationName(String lunchLocationName) {
+        this.lunchLocationName = lunchLocationName;
+    }
+
     public Long getLunchGroupId() {
         return lunchGroupId;
     }

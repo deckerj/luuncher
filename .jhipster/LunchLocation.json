@@ -3,7 +3,7 @@
   "fields": [
     {
       "fieldId": 1,
-      "fieldName": "lunchLocationName",
+      "fieldName": "name",
       "fieldType": "String"
     },
     {

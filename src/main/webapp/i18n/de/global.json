@@ -51,7 +51,7 @@
         "messages": {
             "info": {
                 "authenticated": "<a class=\"alert-link\" href=\"\" ng-click=\"vm.login()\">Melde Dich an</a> mit Deinem existierenden Account.",
-                "register": "Du hast noch keinen Zugang? <a class=\"alert-link\" href=\"\" ng-click=\"vm.register()\">Registriere Dich</a>"
+                "register": "Du hast noch keinen Zugang? <a class=\"alert-link\" href=\"\" ng-click=\"vm.register()\">Registriere Dich jetzt.</a>"
             },
             "error": {
                 "dontmatch": "Das bestätigte Passwort entspricht nicht dem neuen Passwort!"

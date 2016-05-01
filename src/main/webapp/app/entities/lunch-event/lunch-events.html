@@ -30,7 +30,7 @@
                     <td><a ui-sref="lunch-event-detail({id:lunchEvent.id})">{{lunchEvent.id}}</a></td>
                         <td>{{lunchEvent.startDate | date:'mediumDate'}}</td>
                     <td>
-                        <a ui-sref="lunch-location-detail({id:lunchEvent.lunchLocationId})">{{lunchEvent.lunchLocationId}}</a>
+                        <a ui-sref="lunch-location-detail({id:lunchEvent.lunchLocationId})">{{lunchEvent.lunchLocationName}}</a>
                     </td>
                     <td>
                         <a ui-sref="lunch-group-detail({id:lunchEvent.lunchGroupId})">{{lunchEvent.lunchGroupName}}</a>

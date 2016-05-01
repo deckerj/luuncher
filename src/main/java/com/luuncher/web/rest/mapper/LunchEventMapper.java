@@ -13,6 +13,7 @@ import java.util.List;
 public interface LunchEventMapper {
 
     @Mapping(source = "lunchLocation.id", target = "lunchLocationId")
+    @Mapping(source = "lunchLocation.name", target = "lunchLocationName")
     @Mapping(source = "lunchGroup.id", target = "lunchGroupId")
     @Mapping(source = "lunchGroup.name", target = "lunchGroupName")
     LunchEventDTO lunchEventToLunchEventDTO(LunchEvent lunchEvent);

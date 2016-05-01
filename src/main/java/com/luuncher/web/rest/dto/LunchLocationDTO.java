@@ -11,7 +11,7 @@ public class LunchLocationDTO implements Serializable {
 
     private Long id;
 
-    private String lunchLocationName;
+    private String name;
 
 
     private String streetAddress;
@@ -33,12 +33,12 @@ public class LunchLocationDTO implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getLunchLocationName() {
-        return lunchLocationName;
+    public String getName() {
+        return name;
     }
 
-    public void setLunchLocationName(String lunchLocationName) {
-        this.lunchLocationName = lunchLocationName;
+    public void setName(String name) {
+        this.name = name;
     }
     public String getStreetAddress() {
         return streetAddress;
@@ -94,7 +94,7 @@ public class LunchLocationDTO implements Serializable {
     public String toString() {
         return "LunchLocationDTO{" +
             "id=" + id +
-            ", lunchLocationName='" + lunchLocationName + "'" +
+            ", name='" + name + "'" +
             ", streetAddress='" + streetAddress + "'" +
             ", postalCode='" + postalCode + "'" +
             ", city='" + city + "'" +

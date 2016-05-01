@@ -26,7 +26,7 @@
 
         <div class="form-group">
             <label translate="luuncherApp.lunchEvent.lunchLocation" for="field_lunchLocation">Lunch Location</label>
-            <select class="form-control" id="field_lunchLocation" name="lunchLocation" ng-model="vm.lunchEvent.lunchLocationId" ng-options="lunchLocation.id as lunchLocation.id for lunchLocation in vm.lunchlocations | orderBy:'id'">
+            <select class="form-control" id="field_lunchLocation" name="lunchLocation" ng-model="vm.lunchEvent.lunchLocationId" ng-options="lunchLocation.id as lunchLocation.name for lunchLocation in vm.lunchlocations | orderBy:'id'">
                 <option value=""></option>
             </select>
         </div>

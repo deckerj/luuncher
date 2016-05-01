@@ -1,17 +1,24 @@
 <div ng-cloak>
     <div class="row">
         <div class="col-md-8">
-            <h1 translate="home.title">Welcome to Luuncher!</h1>
-            <p class="lead" translate="home.subtitle">Your hassle-free lunch organizer.</p>
-
             <div ng-switch="vm.isAuthenticated()">
+                <div ng-switch-when="false">
+					<h1 translate="home.title">Welcome to Luuncher!</h1>
+					<p class="lead" translate="home.subtitle">Your hassle-free lunch organizer.</p>
+					<div class="alert alert-warning" translate="global.messages.info.authenticated" translate-compile>
+						<a class="alert-link" href="" ng-click="vm.login()">Sign in</a> with your account.
+					</div>
+
+					<div class="alert alert-warning" translate="global.messages.info.register" translate-compile>
+						You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
+					</div>
+                </div>
                 <div ng-switch-when="true">
-                    <h2>Upcoming lunches</h2>
+                    <h2 translate="home.upcomingLunches">Upcoming lunches</h2>
 					<div class="table-responsive">
 						<table class="jh-table table table-striped">
 							<thead>
 								<tr>
-									<th><span translate="global.field.id">ID</span></th>
 									<th><span translate="luuncherApp.lunchEvent.startDate">Start Date</span></th>
 									<th><span translate="luuncherApp.lunchEvent.lunchLocation">Lunch Location</span></th>
 									<th><span translate="luuncherApp.lunchEvent.lunchGroup">Lunch Group</span></th>
@@ -20,39 +27,19 @@
 							</thead>
 							<tbody>
 								<tr ng-repeat="lunchEvent in vm.lunchEvents track by lunchEvent.id">
-									<td><a ui-sref="lunch-event-detail({id:lunchEvent.id})">{{lunchEvent.id}}</a></td>
-										<td>{{lunchEvent.startDate | date:'mediumDate'}}</td>
+									<td>{{lunchEvent.startDate | date:'short'}}</td>
 									<td>
-										<a ui-sref="lunch-location-detail({id:lunchEvent.lunchLocationId})">{{lunchEvent.lunchLocationId}}</a>
+										{{lunchEvent.lunchLocationName}}
 									</td>
 									<td>
-										<a ui-sref="lunch-group-detail({id:lunchEvent.lunchGroupId})">{{lunchEvent.lunchGroupName}}</a>
-									</td>
-									<td class="text-right">
-										<div class="btn-group flex-btn-group-container">
-											<button type="submit"
-													ui-sref="lunch-event-detail({id:lunchEvent.id})"
-													class="btn btn-info btn-sm">
-												<span class="glyphicon glyphicon-eye-open"></span>
-												<span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
-											</button>
-										</div>
+										{{lunchEvent.lunchGroupName}}
 									</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
                 </div>
-
-                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.authenticated" translate-compile>
-                    <a class="alert-link" href="" ng-click="vm.login()">Sign in</a> with your account.
-                </div>
-
-                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.register" translate-compile>
-                    You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
-                </div>
             </div>
-
         </div>
     </div>
 </div>

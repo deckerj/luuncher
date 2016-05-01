@@ -21,8 +21,8 @@ public class LunchLocation implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "lunch_location_name")
-    private String lunchLocationName;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "street_address")
     private String streetAddress;
@@ -44,12 +44,12 @@ public class LunchLocation implements Serializable {
         this.id = id;
     }
 
-    public String getLunchLocationName() {
-        return lunchLocationName;
+    public String getName() {
+        return name;
     }
 
-    public void setLunchLocationName(String lunchLocationName) {
-        this.lunchLocationName = lunchLocationName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getStreetAddress() {
@@ -108,7 +108,7 @@ public class LunchLocation implements Serializable {
     public String toString() {
         return "LunchLocation{" +
             "id=" + id +
-            ", lunchLocationName='" + lunchLocationName + "'" +
+            ", name='" + name + "'" +
             ", streetAddress='" + streetAddress + "'" +
             ", postalCode='" + postalCode + "'" +
             ", city='" + city + "'" +

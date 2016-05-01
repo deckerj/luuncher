@@ -68,7 +68,7 @@ class LunchLocationGatlingTest extends Simulation {
             .exec(http("Create new lunchLocation")
             .post("/api/lunch-locations")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "lunchLocationName":"SAMPLE_TEXT", "streetAddress":"SAMPLE_TEXT", "postalCode":"SAMPLE_TEXT", "city":"SAMPLE_TEXT", "website":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "name":"SAMPLE_TEXT", "streetAddress":"SAMPLE_TEXT", "postalCode":"SAMPLE_TEXT", "city":"SAMPLE_TEXT", "website":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_lunchLocation_url"))).exitHereIfFailed
             .pause(10)

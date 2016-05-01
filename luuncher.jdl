@@ -6,7 +6,7 @@ entity Person {
 }
 
 entity LunchLocation {
-  lunchLocationName String,
+  name String,
   streetAddress String,
   postalCode String,
   city String,
@@ -18,7 +18,7 @@ entity LunchEvent {
 }
 
 relationship OneToOne {
-  LunchEvent{lunchLocation} to LunchLocation
+  LunchEvent{lunchLocation(name)} to LunchLocation
 }
 
 relationship OneToMany {
