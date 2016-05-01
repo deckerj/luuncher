@@ -11,7 +11,7 @@
         <dt><span translate="luuncherApp.lunchGroup.person">Person</span></dt>
         <dd>
             <span ng-repeat="person in vm.lunchGroup.people">
-                <a ui-sref="person-detail({id: {{person.id}}})">{{person.id}}</a>{{$last ? '' : ', '}}
+                <a ui-sref="person-detail({id: {{person.id}}})">{{person.userLogin}}</a>{{$last ? '' : ', '}}
             </span>
         </dd>
         <hr>

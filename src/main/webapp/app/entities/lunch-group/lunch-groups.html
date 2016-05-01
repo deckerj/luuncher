@@ -30,7 +30,7 @@
                     <td>{{lunchGroup.name}}</td>
                     <td>
                         <span ng-repeat="person in lunchGroup.people">
-                            <a class="form-control-static" ui-sref="person-detail({id: {{person.id}}})">{{person.id}}</a>{{$last ? '' : ', '}}
+                            <a class="form-control-static" ui-sref="person-detail({id: {{person.id}}})">{{person.userLogin}}</a>{{$last ? '' : ', '}}
                         <span>
                     </td>
                     <td class="text-right">

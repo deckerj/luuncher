@@ -22,7 +22,7 @@
 
         <div class="form-group">
             <label translate="luuncherApp.lunchGroup.person" for="field_person">Person</label>
-            <select class="form-control" id="field_person" multiple name="person" ng-model="vm.lunchGroup.people" ng-options="person as person.id for person in vm.people track by person.id"></select>
+            <select class="form-control" id="field_person" multiple name="person" ng-model="vm.lunchGroup.people" ng-options="person as person.userLogin for person in vm.people track by person.id"></select>
         </div>
     </div>
     <div class="modal-footer">

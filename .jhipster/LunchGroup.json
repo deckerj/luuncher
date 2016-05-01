@@ -12,7 +12,7 @@
       "relationshipName": "person",
       "otherEntityName": "person",
       "relationshipType": "many-to-many",
-      "otherEntityField": "id",
+      "otherEntityField": "userLogin",
       "ownerSide": true
     }
   ],
