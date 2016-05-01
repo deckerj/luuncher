@@ -24,14 +24,14 @@ public class Person implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User user;
+
     @ManyToMany(mappedBy = "people")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<LunchGroup> lunchGroups = new HashSet<>();
-
-    @OneToOne
-    @JoinColumn(unique = true)
-    private User user;
 
     public Long getId() {
         return id;
@@ -41,20 +41,20 @@ public class Person implements Serializable {
         this.id = id;
     }
 
-    public Set<LunchGroup> getLunchGroups() {
-        return lunchGroups;
-    }
-
-    public void setLunchGroups(Set<LunchGroup> lunchGroups) {
-        this.lunchGroups = lunchGroups;
-    }
-
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Set<LunchGroup> getLunchGroups() {
+        return lunchGroups;
+    }
+
+    public void setLunchGroups(Set<LunchGroup> lunchGroups) {
+        this.lunchGroups = lunchGroups;
     }
 
     @Override

@@ -16,8 +16,8 @@
             "detail": {
                 "title": "Person"
             },
-            "lunchGroup": "Lunch Group",
-            "user": "User"
+            "user": "User",
+            "lunchGroup": "Lunch Group"
         }
     }
 }

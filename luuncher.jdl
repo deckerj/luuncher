@@ -3,9 +3,6 @@ entity LunchGroup {
 }
 
 entity Person {
-   firstName String,
-   lastName String,
-   email String
 }
 
 entity LunchLocation {
@@ -31,6 +28,11 @@ relationship OneToMany {
 relationship ManyToMany {
    LunchGroup{person} to Person{lunchGroup(name)}
 }
+
+relationship OneToOne {
+  Person{user(login)} to User
+}
+
 
 dto * with mapstruct
 service all with serviceImpl

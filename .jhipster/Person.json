@@ -1,26 +1,26 @@
 {
-    "relationships": [
-        {
-            "relationshipId": 1,
-            "relationshipName": "lunchGroup",
-            "otherEntityName": "lunchGroup",
-            "relationshipType": "many-to-many",
-            "ownerSide": false,
-            "otherEntityRelationshipName": "person"
-        },
-        {
-            "relationshipName": "user",
-            "otherEntityName": "user",
-            "relationshipType": "one-to-one",
-            "otherEntityField": "login",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "person"
-        }
-    ],
-    "fields": [],
-    "changelogDate": "20160427203106",
-    "dto": "mapstruct",
-    "service": "serviceImpl",
-    "entityTableName": "person",
-    "pagination": "no"
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "user",
+      "otherEntityName": "user",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "login",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "person"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "lunchGroup",
+      "otherEntityName": "lunchGroup",
+      "relationshipType": "many-to-many",
+      "ownerSide": false,
+      "otherEntityRelationshipName": "person"
+    }
+  ],
+  "fields": [],
+  "changelogDate": "20160427203106",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl"
 }

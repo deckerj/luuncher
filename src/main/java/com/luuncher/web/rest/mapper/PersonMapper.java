@@ -18,8 +18,8 @@ public interface PersonMapper {
 
     List<PersonDTO> peopleToPersonDTOs(List<Person> people);
 
-    @Mapping(target = "lunchGroups", ignore = true)
     @Mapping(source = "userId", target = "user")
+    @Mapping(target = "lunchGroups", ignore = true)
     Person personDTOToPerson(PersonDTO personDTO);
 
     List<Person> personDTOsToPeople(List<PersonDTO> personDTOs);
